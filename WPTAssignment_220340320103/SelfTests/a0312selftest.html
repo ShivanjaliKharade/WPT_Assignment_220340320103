@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .r{color: red;}
+        .u{text-decoration: underline;}
+    </style>
+</head>
+<body>
+    <p id="output">Hello Text</p>
+    <input id="check1" type="checkbox">
+    <p>Make it red</p>
+    <input id="check2" type="checkbox">
+    <p>Make it underline</p>
+    <button id="button">Apply</button>
+</body>
+<script>
+ let check1El = document.getElementById("check1");
+ let check2El = document.getElementById("check2");
+ let buttonEL = document.getElementById("button");
+ let outputEl = document.getElementById("output");
+ 
+ buttonEL.addEventListener('click',()=>{
+    if(check1El.checked && check2El.checked){
+        outputEl.classList.add("r");
+        outputEl.classList.add("u");
+    }
+    
+    
+    else if(check1El.checked){
+        outputEl.classList.add("r");
+        outputEl.classList.remove("u");
+    }
+
+    else if(check2El.checked){
+        outputEl.classList.add("u");
+        outputEl.classList.remove("r");
+    }
+
+});
+</script>

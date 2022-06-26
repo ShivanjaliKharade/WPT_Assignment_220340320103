@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Br/> <input type="String" id="givenword"
+    placeholder="enter word"/>
+    <span id="rm"> Input </span>
+    <Br/> <button id="nn">Click here</button>
+
+</body>
+
+<script>
+
+window.addEventListener('DOMContentLoaded', ()=>{
+console.log("all tags are interpreted");
+
+const nn =document.querySelector("#nn");
+
+nn.addEventListener('click', ()=>{ 
+
+nn.disabled=false;
+const y = document.querySelector("#givenword");
+let result = y.value;
+
+const rm = document.querySelector("#rm");
+
+rm.innerHTML=result;
+
+});
+
+});
+
+</script>
+</html>

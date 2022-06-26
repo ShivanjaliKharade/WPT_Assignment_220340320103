@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Assignment 04 14/06/2022</h4>
+    <input id="input1" placeholder="Enter Pin">  <br> <br><hr>
+    <button id="button">Click Me</button> 
+    <br> <br> <br>
+    <!--<br/><hr><p id="para1">Hello</p>-->
+    <textarea rows="5" cols="50" id="getAreaInfo" placeholder="getAreaInfo"></textarea>
+</body>
+
+<script>
+    window.addEventListener("DOMContentLoaded",()=>{
+    let area1 = [{pincode:400708,area:"Airoli, Navi Mumbai, Maharashtra"},
+                    {pincode:400707,area:"Kharghar, Navi Mumbai, Maharashtra"},
+                    {pincode:400709,area:"Juhu,Mumbai, Maharashtra"}]
+
+        const pin = document.querySelector("#button");
+        pin.addEventListener('click',()=>{
+            let input1 = document.querySelector("#input1").value;
+            let output=findpin(input1);
+            console.log(output.result);
+            if(output.result){
+                console.log(output.getdetails.area);
+                document.querySelector("#getAreaInfo").value = output.getdetails.area;
+            }
+            else{
+                document.querySelector("#getAreaInfo").value = "NOT FOUND";
+            }
+        });
+
+        function findpin(input1){
+            let output1 = {result:false, getdetails:{}};
+            for(let i=0; i<area1.length;i++){
+                if(area1[i].pincode==input1)
+                output1.getdetails=area1[i];
+                output1.result=true;
+                break;
+            }
+            return output1;
+        }
+
+    });
+</script>
+</html>
